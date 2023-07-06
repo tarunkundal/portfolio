@@ -1,9 +1,7 @@
-import WeatherPage from "./components/weather";
-
 function App() {
   return (
     <>
-      <WeatherPage />
+      <h1>hello portfolio</h1>
     </>
   );
 }
