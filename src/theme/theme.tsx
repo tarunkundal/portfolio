@@ -3,14 +3,14 @@ import { mode } from "@chakra-ui/theme-tools";
 
 export const theme = extendTheme({
   colors: {
-    primary: "#B9F3FC",
-    secondary: "#AEE2FF",
-    teritory: "#93C6E7",
-    button: "#FEDEFF",
+    primary: "#EAE7B1",
+    secondary: "#A6BB8D",
+    teritory: "#F1C93B",
+    highlight: "#F0FF42",
   },
   fonts: {
     body: "Nunito, sans-serif",
-    heading: "Georgia, serif",
+    heading: "Nunito, serif",
     mono: "Menlo, monospace",
   },
 
@@ -18,8 +18,8 @@ export const theme = extendTheme({
     global: (props: StyleFunctionProps) => ({
       body: {
         fontFamily: "Nunito, sans-serif",
-        color: mode("FEC868", "FDA769")(props),
-        bg: mode("#FDA769", "#FEC868")(props),
+        color: mode("#CFFDE1", "#C6DE41")(props),
+        bg: mode("#4B7551", "#304D4E")(props),
       },
       a: {
         color: "F2FFE9",
