@@ -1,13 +1,5 @@
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import "./Home.css";
+import { Box, Center, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Home = () => {
@@ -49,15 +41,21 @@ const Home = () => {
 
       <Center mt={{ base: "18", md: "55" }}>
         <Flex w={"25%"} justifyContent={"space-around"}>
-          <a href="https://www.instagram.com/chauhan271singh" target="blank">
-            <FaInstagram fontSize={"2rem"} />
-          </a>
-          <a href="https://www.github.com/tarunkundal" target="blank">
-            <FaGithub fontSize={"2rem"} />
-          </a>
-          <a href="https://www.linkedin.com" target="blank">
-            <FaLinkedin fontSize={"2rem"} />
-          </a>
+          <Box _hover={{ color: "highlight" }}>
+            <a href="https://www.instagram.com/chauhan271singh" target="blank">
+              <FaInstagram fontSize={"2rem"} />
+            </a>
+          </Box>
+          <Box _hover={{ color: "highlight" }}>
+            <a href="https://www.github.com/tarunkundal" target="blank">
+              <FaGithub fontSize={"2rem"} />
+            </a>
+          </Box>
+          <Box _hover={{ color: "highlight" }}>
+            <a href="https://www.linkedin.com" target="blank">
+              <FaLinkedin fontSize={"2rem"} />
+            </a>
+          </Box>
         </Flex>
       </Center>
     </Stack>

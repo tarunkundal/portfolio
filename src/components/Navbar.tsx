@@ -9,9 +9,6 @@ import {
   Button,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -20,7 +17,7 @@ import {
 import { FaHamburger, FaMinus, FaMoon, FaSun } from "react-icons/fa";
 import PROFILE from "../assets/tarun.jpg";
 
-const Links = ["Home", "About", "Resume", "Portfolios", "Contact"];
+const Links = ["Home", "About", "Resume", "Portfolio", "Contact"];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -32,7 +29,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       bg: "primary",
       color: useColorModeValue("teritory", "highlight"),
     }}
-    href={"#"}
+    href={`${children}`}
   >
     {children}
   </Link>
@@ -84,12 +81,6 @@ const Navbar = () => {
               >
                 <Avatar size={"md"} src={PROFILE} />
               </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
             </Menu>
           </Flex>
         </Flex>
