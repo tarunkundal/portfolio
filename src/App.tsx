@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import { ROUTES } from "./routes";
 import Portfolio from "./components/Portfolio";
-import RepoCard from "./components/RepoCard";
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <Route exact path={ROUTES.CONTACT} component={Home} />
         <Route exact path={ROUTES.PORRTFOLIO} component={Portfolio} />
       </Switch>
-      <RepoCard />
     </>
   );
 }

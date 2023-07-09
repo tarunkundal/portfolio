@@ -12,8 +12,9 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { BsArrowUpRight, BsHeartFill, BsHeart } from "react-icons/bs";
+import { repoIntf } from "../data/Repo";
 
-const RepoCard = () => {
+const RepoCard = (props: repoIntf) => {
   const [liked, setLiked] = useState(false);
 
   return (
@@ -24,7 +25,7 @@ const RepoCard = () => {
         my={5}
         mx={[0, 5]}
         overflow={"hidden"}
-        bg={useColorModeValue("primary", "secondary")}
+        bg={useColorModeValue("teritory", "secondary")}
         boxShadow={useColorModeValue(
           "6px 6px 0 yellow",
           "6px 6px 0 greenyellow"
@@ -38,8 +39,9 @@ const RepoCard = () => {
       >
         <Box h={"200px"} borderBottom={"1px"} borderColor="black">
           <Img
-            src={"https://avatars.githubusercontent.com/u/116143264?v=4"}
-            roundedTop={"sm"}
+            // src={"https://avatars.githubusercontent.com/u/116143264?v=4"}
+            src={props.image}
+            roundedTop={"md"}
             objectFit="cover"
             h="full"
             w="full"
@@ -47,29 +49,30 @@ const RepoCard = () => {
           />
         </Box>
         <Box p={4}>
-          <Box
-            bg="black"
-            display={"inline-block"}
-            px={2}
-            py={1}
-            color="white"
-            mb={2}
-          >
-            <Text fontSize={"xs"} fontWeight="medium">
-              React
-            </Text>
-          </Box>
+          {props.language?.map((lang: string) => {
+            return (
+              <Box
+                bg="black"
+                display={"inline-block"}
+                px={2}
+                py={1}
+                color="white"
+                mb={2}
+              >
+                <Text fontSize={"xs"} fontWeight="medium">
+                  {lang}
+                </Text>
+              </Box>
+            );
+          })}
           <Heading
-            color={useColorModeValue("secondary", "highlight")}
+            color={useColorModeValue("yellow", "highlight")}
             fontSize={"2xl"}
             noOfLines={1}
           >
-            React v18.0
+            {props.title}
           </Heading>
-          <Text color={useColorModeValue("blackAlpha.600", "white")}>
-            In this post, we will give an overview of what is new in React 18,
-            and what it means for the future.
-          </Text>
+          <Text color={"white"}>{props.descripition}</Text>
         </Box>
         <HStack borderTop={"1px"} color={"darkolivegreen"}>
           <Flex
@@ -79,10 +82,13 @@ const RepoCard = () => {
             roundedBottom={"sm"}
             cursor={"pointer"}
             w="full"
+            color={"highlight"}
           >
-            <Text fontSize={"md"} fontWeight={"semibold"}>
-              Github
-            </Text>
+            <a href={props.link1}>
+              <Text fontSize={"md"} fontWeight={"semibold"}>
+                Github
+              </Text>
+            </a>
             <BsArrowUpRight fontSize={"18px"} />
           </Flex>
           <Flex
