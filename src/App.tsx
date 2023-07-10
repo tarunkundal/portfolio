@@ -4,11 +4,13 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import { ROUTES } from "./routes";
 import Portfolio from "./components/Portfolio";
+import PortfolioCard from "./components/PortfolioCard";
 
 function App() {
   return (
     <>
       <Navbar />
+      <PortfolioCard />
       <Switch>
         <Route exact path={"/"} component={Home} />
         <Route exact path={ROUTES.HOME} component={Home} />

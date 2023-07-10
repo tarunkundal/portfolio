@@ -4,8 +4,6 @@ import {
   Flex,
   Avatar,
   HStack,
-  Link,
-  IconButton,
   Button,
   Menu,
   MenuButton,
@@ -14,25 +12,33 @@ import {
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
-import { FaHamburger, FaMinus, FaMoon, FaSun } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { ImCross } from "react-icons/im";
 import PROFILE from "../assets/tarun.jpg";
+import { NavLink } from "react-router-dom";
+import { color } from "framer-motion";
 
 const Links = ["Home", "About", "Resume", "Portfolio", "Contact"];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
+const NavLinks = ({ children }: { children: ReactNode }) => (
+  <Box
     px={2}
     py={1}
     rounded={"md"}
     _hover={{
       textDecoration: "none",
-      bg: "primary",
       color: useColorModeValue("teritory", "highlight"),
     }}
-    href={`${children}`}
   >
-    {children}
-  </Link>
+    <NavLink
+      to={`${children}`}
+      style={{ textDecoration: "none" }}
+      activeStyle={{ color: "greenyellow", fontWeight: "bold" }}
+    >
+      {children}
+    </NavLink>
+  </Box>
 );
 
 const Navbar = () => {
@@ -41,15 +47,20 @@ const Navbar = () => {
 
   return (
     <>
-      <Box px={4}>
+      <Box px={4} borderBottom={"2px"}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
+          <Button
             size={"md"}
-            icon={isOpen ? <FaMinus /> : <FaHamburger />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
-          />
+            display={{ md: "none" }}
+            bg={"secondary"}
+          >
+            {isOpen ? (
+              <ImCross color="red" />
+            ) : (
+              <GiHamburgerMenu color="greenyellow" />
+            )}
+          </Button>
           <HStack spacing={8} alignItems={"center"}>
             <HStack
               as={"nav"}
@@ -57,7 +68,7 @@ const Navbar = () => {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLinks key={link}>{link}</NavLinks>
               ))}
             </HStack>
           </HStack>
@@ -78,6 +89,10 @@ const Navbar = () => {
                 variant={"link"}
                 cursor={"pointer"}
                 minW={0}
+                transition="transform .2s"
+                _hover={{
+                  transform: "scale(1.3)",
+                }}
               >
                 <Avatar size={"md"} src={PROFILE} />
               </MenuButton>
@@ -89,7 +104,7 @@ const Navbar = () => {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLinks key={link}>{link}</NavLinks>
               ))}
             </Stack>
           </Box>

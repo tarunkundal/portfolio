@@ -26,23 +26,23 @@ const Portfolio = () => {
     <>
       {portfolioData?.map((repo) => {
         return (
-          <Flex
-            mx={4}
-            display={"inline-grid"}
-            gridAutoColumns={"auto"}
+          // <Flex
+          // mx={4}
+          // display={"inline-grid"}
+          // gridAutoColumns={"auto"}
+          // key={repo.id}
+          // >
+          <RepoCard
             key={repo.id}
-          >
-            <RepoCard
-              key={repo.id}
-              id={repo.id}
-              category={repo.category}
-              image={repo.image}
-              language={repo.language}
-              link1={repo.link1}
-              title={repo.title}
-              descripition={repo.descripition}
-            />
-          </Flex>
+            id={repo.id}
+            category={repo.category}
+            image={repo.image}
+            language={repo.language}
+            link1={repo.link1}
+            title={repo.title}
+            descripition={repo.descripition}
+          />
+          // </Flex>
         );
       })}
     </>

@@ -41,17 +41,35 @@ const Home = () => {
 
       <Center mt={{ base: "18", md: "55" }}>
         <Flex w={"25%"} justifyContent={"space-around"}>
-          <Box _hover={{ color: "highlight" }}>
+          <Box
+            transition="transform .2s"
+            _hover={{
+              color: "highlight",
+              transform: "scale(1.3)",
+            }}
+          >
             <a href="https://www.instagram.com/chauhan271singh" target="blank">
               <FaInstagram fontSize={"2rem"} />
             </a>
           </Box>
-          <Box _hover={{ color: "highlight" }}>
+          <Box
+            transition="transform .2s"
+            _hover={{
+              color: "highlight",
+              transform: "scale(1.3)",
+            }}
+          >
             <a href="https://www.github.com/tarunkundal" target="blank">
               <FaGithub fontSize={"2rem"} />
             </a>
           </Box>
-          <Box _hover={{ color: "highlight" }}>
+          <Box
+            transition="transform .2s"
+            _hover={{
+              color: "highlight",
+              transform: "scale(1.3)",
+            }}
+          >
             <a href="https://www.linkedin.com" target="blank">
               <FaLinkedin fontSize={"2rem"} />
             </a>
