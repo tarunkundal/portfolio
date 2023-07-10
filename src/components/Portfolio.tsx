@@ -1,7 +1,6 @@
 import React from "react";
 import ReposData from "../data/Repo";
 import RepoCard from "./RepoCard";
-import { Flex } from "@chakra-ui/react";
 
 // const url = "https://api.github.com/user/repos";
 // const accessToken = "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";

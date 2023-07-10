@@ -11,16 +11,18 @@ import React from "react";
 import Profile from "../assets/tarun.jpg";
 import Icon from "../assets/icon.8ecb3043.svg";
 
-const pulseRing = keyframes`
+export const pulseRing = keyframes`
 	0% {
     transform: scale(0.33);
   }
-  40%,
   50% {
     opacity: .7;
   }
+  40%{
+    opacity:.4
+  }
   100% {
-    opacity: 0.1;
+    opacity: 0;
   }
 	`;
 
@@ -47,7 +49,7 @@ const About = () => {
           alt="image"
           boxSize={{ base: "30%", md: "25%" }}
           borderRadius={"3xl"}
-          animation={`6s ${pulseRing} cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite`}
+          animation={`3s ${pulseRing}  cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s `}
         />
         <Stack
           textAlign={"center"}
@@ -60,7 +62,7 @@ const About = () => {
               Tarun Chauhan
             </Text>
           </Heading>
-          <Text textAlign={"left"}>
+          <Text>
             I'm a Full Stack developer hailing from India living in Gurugram. I
             Love Working With Modern Technologies, Building And Designing
             Awesome Projects. I Prefer Minimalistic & Clean Designs With Strong

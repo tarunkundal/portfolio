@@ -17,7 +17,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import PROFILE from "../assets/tarun.jpg";
 import { NavLink } from "react-router-dom";
-import { color } from "framer-motion";
 
 const Links = ["Home", "About", "Resume", "Portfolio", "Contact"];
 

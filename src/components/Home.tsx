@@ -1,6 +1,32 @@
-import { Box, Center, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  keyframes,
+} from "@chakra-ui/react";
 
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+
+const typing = keyframes` 
+0% {
+    transform: scale(0.33);
+    width:0
+  }
+  40%,
+  50% {
+    opacity: .7;
+  }
+  100% {
+    opacity: 0.1;
+  }`;
+
+const blinkCaret = keyframes` 
+50% {
+        borderColor: red;
+    }`;
 
 const Home = () => {
   return (
@@ -12,18 +38,8 @@ const Home = () => {
             size={{ base: "2xl", md: "4xl" }}
             as={"span"}
             color={"highlight"}
-            bgClip="text"
-            bgGradient={[
-              "linear(to-tr, teal.300, secondary)",
-              "linear(to-t, primary, secondary)",
-              "linear(to-b, teritory, highlight)",
-            ]}
-            _hover={{
-              bgGradient: [
-                "linear(to-l, teritory, highlight)",
-                "linear(to-r,primary,secondary)",
-              ],
-            }}
+            whiteSpace={"nowrap"}
+            // animation={` 2s ${typing}  steps(10, end), ${blinkCaret} 0.5s step-end infinite alternate`}
           >
             Tarun Chauhan
           </Heading>
