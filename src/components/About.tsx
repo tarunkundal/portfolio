@@ -28,10 +28,15 @@ export const pulseRing = keyframes`
 
 const About = () => {
   return (
-    <Stack m={"5%"}>
+    <Stack
+      bgImage={
+        "url('https://img.freepik.com/free-vector/dark-background-with-green-wavy-shapes_1035-9068.jpg?size=626&ext=jpg&ga=GA1.1.823988085.1685946705&semt=ais')"
+      }
+    >
       <Heading
         bgGradient={"linear(to-tr,primary,secondary,highlight,teritory)"}
         bgClip={"text"}
+        m={"5%"}
       >
         About Me
       </Heading>
@@ -39,7 +44,6 @@ const About = () => {
         mx={{ base: "5%", md: "15%" }}
         my={"5%"}
         display={"flex"}
-        flexDirection={{ base: "column", md: "row" }}
         justifyContent={"space-between"}
         alignItems={"center"}
         gap={{ base: 12, md: 4 }}
@@ -47,7 +51,7 @@ const About = () => {
         <Image
           src={Profile}
           alt="image"
-          boxSize={{ base: "30%", md: "25%" }}
+          boxSize={{ base: "35%", md: "25%" }}
           borderRadius={"3xl"}
           animation={`3s ${pulseRing}  cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s `}
         />
@@ -62,7 +66,7 @@ const About = () => {
               Tarun Chauhan
             </Text>
           </Heading>
-          <Text>
+          <Text fontSize={{ md: "22px" }}>
             I'm a Full Stack developer hailing from India living in Gurugram. I
             Love Working With Modern Technologies, Building And Designing
             Awesome Projects. I Prefer Minimalistic & Clean Designs With Strong
@@ -72,7 +76,14 @@ const About = () => {
           </Text>
         </Stack>
       </Stack>
-      <Stack>
+
+      <Stack
+        bgImage={
+          "url('https://img.freepik.com/premium-photo/green-tropical-leaf-dark-background_392895-104334.jpg?size=626&ext=jpg')"
+        }
+        bgRepeat={"no-repeat"}
+        bgSize={"cover"}
+      >
         <Heading
           textAlign={"center"}
           color={useColorModeValue("teritory", "secondary")}
@@ -84,6 +95,7 @@ const About = () => {
           justifyContent={"space-between"}
           flexDirection={{ base: "column", md: "row" }}
           gap={4}
+          p={2}
         >
           <Stack
             w={{ base: "100%", md: "30%" }}
