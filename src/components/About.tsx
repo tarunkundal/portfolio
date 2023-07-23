@@ -61,8 +61,10 @@ const About = () => {
           src={Profile}
           alt="image"
           boxSize={{ base: "35%", md: "30%" }}
-          rounded={"full"}
+          rounded={"2xl"}
           opacity={0.8}
+          transition={"1.2s ease-in-out "}
+          _hover={{ transform: "scale(1.1) " }}
           animation={`3s ${pulseRing}  cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s `}
         />
         <Stack
@@ -106,9 +108,6 @@ const About = () => {
           flexDirection={{ base: "column", md: "row" }}
           gap={4}
           p={2}
-          // bg={
-          //   "url('https://v4.cdnpk.net/videvo_files/video/free/video0485/large_watermarked/_import_61b4426beee026.13798649_FPpreview.mp4')"
-          // }
         >
           <Stack
             w={{ base: "100%", md: "30%" }}
